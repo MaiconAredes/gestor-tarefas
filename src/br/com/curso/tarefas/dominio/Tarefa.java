@@ -41,6 +41,10 @@ public class Tarefa {
         return descricao;
     }
 
+    public LocalDate obterDataLimite() {
+        return dataLimite;
+    }
+
     public String obterCodigo() {
         return codigo;
     }
