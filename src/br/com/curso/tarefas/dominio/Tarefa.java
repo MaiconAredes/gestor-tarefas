@@ -37,6 +37,10 @@ public class Tarefa {
         this.concluida = false;
     }
 
+    public String obterDescricao() {
+        return descricao;
+    }
+
     public String obterCodigo() {
         return codigo;
     }
