@@ -12,9 +12,9 @@ public class AplicacaoGestorTarefas {
     System.out.println("Tarefas planejadas para hoje:");
     System.out.println("1. Revisar requisitos do projeto");
     System.out.println("2. Conferir pendências da equipe CPR");
-    System.out.println("3. Entregar OF");
+    System.out.println("3. Entregar OF ");
     System.out.println("4. C:\\Users\\mmaredes\\Documents\\gestor-tarefas\\src\\br\\com\\curso\\tarefas\\AplicacaoGestorTarefas.java");
     System.out.println();
     System.out.println("Status inicial: tarefas aguardando evolução do sistema.");
     }
-}
+} 
