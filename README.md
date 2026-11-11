@@ -16,3 +16,8 @@ Descrição: Gestor de tarefas em Java para praticar Git.
 ## Autoria
 
 Projeto didático mantido por MaiconAredes
+
+## Próximos passos
+
+- Contar tarefas por situação
+- Listar tarefas por responsável
