@@ -3,7 +3,7 @@ package br.com.curso.tarefas.dominio;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-public class Tarefa {
+public abstract class Tarefa {
 
     private String codigo;
     private String titulo;
@@ -16,7 +16,7 @@ public class Tarefa {
     private BigDecimal custoEstimado;
     private Responsavel responsavel;
 
-    public void cadastrar(
+    protected void cadastrarTarefa(
             String codigo,
             String titulo,
             String descricao,
@@ -35,42 +35,6 @@ public class Tarefa {
         this.horasRealizadas = 0;
         this.emAndamento = false;
         this.concluida = false;
-    }
-
-    public String obterDescricao() {
-        return descricao;
-    }
-
-    public LocalDate obterDataLimite() {
-        return dataLimite;
-    }
-
-    public String obterCodigo() {
-        return codigo;
-    }
-
-    public String obterTitulo() {
-        return titulo;
-    }
-
-    public int obterEstimativaHoras() {
-        return estimativaHoras;
-    }
-
-    public int obterHorasRealizadas() {
-        return horasRealizadas;
-    }
-
-    public boolean estaEmAndamento() {
-        return emAndamento;
-    }
-
-    public boolean estaConcluida() {
-        return concluida;
-    }
-
-    public String obterNomeResponsavel() {
-        return responsavel.obterNome();
     }
 
     public boolean iniciar() {
@@ -107,6 +71,42 @@ public class Tarefa {
         return true;
     }
 
+    public String obterCodigo() {
+        return codigo;
+    }
+
+    public String obterTitulo() {
+        return titulo;
+    }
+
+    public int obterEstimativaHoras() {
+        return estimativaHoras;
+    }
+
+    public int obterHorasRealizadas() {
+        return horasRealizadas;
+    }
+
+    public boolean estaEmAndamento() {
+        return emAndamento;
+    }
+
+    public boolean estaConcluida() {
+        return concluida;
+    }
+
+    public boolean estaPendente() {
+        return !emAndamento && !concluida;
+    }
+
+    public String obterNomeResponsavel() {
+        return responsavel.obterNome();
+    }
+
+    public boolean possuiResponsavel(String matricula) {
+        return responsavel.obterMatricula().equals(matricula);
+    }
+
     public boolean possuiCodigo(String codigoInformado) {
         return codigo.equals(codigoInformado);
     }
@@ -124,4 +124,8 @@ public class Tarefa {
             return "PENDENTE";
         }
     }
+
+     public abstract int calcularPrioridade();
+
+    public abstract String obterTipo();
 }
